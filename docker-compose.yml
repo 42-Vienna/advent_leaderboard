@@ -52,6 +52,3 @@ services:
       SECRET_KEY_BASE            : ${SECRET_KEY_BASE}
     depends_on:
       - db
-
-volumes:
-  postgres_data: {}
