@@ -3,17 +3,26 @@
     <tr>
       <th>#</th>
       <th>Name</th>
-      <th>Time</th>
+      <th>Time Taken</th>
     </tr>
   </thead>
   <tbody>
-    <% top_speeds(day, count, 2).each.with_index do |r, i| %>
+    <% top_speeds(day, 2, count).each.with_index do |star, i| %>
       <tr>
         <td><strong><%= i + 1 %></strong></td>
         <td>
-            <%= render r[0] %>
+            <%= render star.participant %>
         </td>
-        <td><%= r[1].completed_at.to_scoreboard_format %></td>
+        <td><%= time_taken(day, star) %></td>
+      </tr>
+    <% end %>
+    <% if count_gold(day) > count %>
+      <tr>
+        <td colspan="3" class="text-secondary text-center">
+          <%= link_to year_day_url(day.year.number, day.number), class: 'link-secondary' do %>
+            Full leaderboard (+<%= count_gold(day) - count %>)
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

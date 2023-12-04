@@ -35,4 +35,22 @@ RSpec.describe Day, type: :model do
       expect { star.day.destroy }.to change { Star.count }.by(-1)
     end
   end
+
+  describe 'start_time' do
+    it 'should be at 5AM UTC on the given day' do
+      year = create(:year, number: 2023)
+      day = create(:day, year: year, number: 1)
+
+      expect(day.start_time).to eq(Time.utc(2023, 12, 1, 5))
+    end
+  end
+
+  describe 'end_time' do
+    it 'should be at 5AM UTC on the next day' do
+      year = create(:year, number: 2023)
+      day = create(:day, year: year, number: 1)
+
+      expect(day.end_time).to eq(Time.utc(2023, 12, 2, 5))
+    end
+  end
 end
