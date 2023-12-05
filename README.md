@@ -1,4 +1,4 @@
-# Codam Advent of Code Leaderboard
+# 42 Vienna Advent of Code Leaderboard
 
 This app provides a simple integration between [Advent of Code](https://adventofcode.com) and the [42 API](https://api.intra.42.fr). It will track a private leaderboard, associating users with intra accounts as it syncs data over. Users can sign in with 42 OAuth to link their accounts, after which they will appear on the leaderboard with their intra name and picture.
 

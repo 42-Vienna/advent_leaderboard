@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
   def create
     auth = request.env['omniauth.auth']
 
-    unless auth.extra.raw_info.campus.any? { |campus| campus.id == 14 } # Codam's ID
-      flash[:danger] = 'You are not associated with Codam, so you cannot log in here!'
+    unless auth.extra.raw_info.campus.any? { |campus| campus.id == 52 } # campus ID
+      flash[:danger] = 'You are not associated with 42 Vienna, so you cannot log in here!'
       redirect_to root_url
       return
     end

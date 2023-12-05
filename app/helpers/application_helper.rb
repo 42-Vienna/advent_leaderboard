@@ -1,9 +1,9 @@
 module ApplicationHelper
   def page_title(title = "")
     if title.empty?
-      'Codam AoC Leaderboard'
+      '42 Vienna AoC Leaderboard'
     else
-      "#{title} | Codam AoC Leaderboard"
+      "#{title} | 42 Vienna AoC Leaderboard"
     end
   end
 
