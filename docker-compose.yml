@@ -5,6 +5,7 @@ services:
     build: .
     image: advent-app:latest
     container_name: advent-app
+    pull_policy: build
     ports:
       - "3003:3000"
     environment:
